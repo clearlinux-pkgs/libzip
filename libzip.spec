@@ -4,7 +4,7 @@
 #
 Name     : libzip
 Version  : 1.5.2
-Release  : 15
+Release  : 16
 URL      : https://nih.at/libzip/libzip-1.5.2.tar.xz
 Source0  : https://nih.at/libzip/libzip-1.5.2.tar.xz
 Summary  : library for handling zip archives
@@ -77,6 +77,7 @@ license components for the libzip package.
 
 %prep
 %setup -q -n libzip-1.5.2
+cd %{_builddir}/libzip-1.5.2
 %patch1 -p1
 
 %build
@@ -84,23 +85,23 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568066305
+export SOURCE_DATE_EPOCH=1604442958
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1568066305
+export SOURCE_DATE_EPOCH=1604442958
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libzip
-cp LICENSE %{buildroot}/usr/share/package-licenses/libzip/LICENSE
+cp %{_builddir}/libzip-1.5.2/LICENSE %{buildroot}/usr/share/package-licenses/libzip/a4d3f1b781b151d00accda26fe1392d259a3b0e0
 pushd clr-build
 %make_install
 popd
@@ -132,4 +133,4 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libzip/LICENSE
+/usr/share/package-licenses/libzip/a4d3f1b781b151d00accda26fe1392d259a3b0e0
