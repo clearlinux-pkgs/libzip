@@ -4,7 +4,7 @@
 #
 Name     : libzip
 Version  : 1.9.0
-Release  : 17
+Release  : 18
 URL      : https://libzip.org/download/libzip-1.9.0.tar.xz
 Source0  : https://libzip.org/download/libzip-1.9.0.tar.xz
 Summary  : library for handling zip archives
