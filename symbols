@@ -16,6 +16,7 @@ libzip.so.5:zip_error_get_sys_type
 libzip.so.5:zip_error_init
 libzip.so.5:zip_error_init_with_code
 libzip.so.5:zip_error_set
+libzip.so.5:zip_error_set_from_source
 libzip.so.5:zip_error_strerror
 libzip.so.5:zip_error_system_type
 libzip.so.5:zip_error_to_data
@@ -92,9 +93,13 @@ libzip.so.5:zip_source_function
 libzip.so.5:zip_source_function_create
 libzip.so.5:zip_source_get_file_attributes
 libzip.so.5:zip_source_is_deleted
+libzip.so.5:zip_source_is_seekable
 libzip.so.5:zip_source_keep
+libzip.so.5:zip_source_layered
+libzip.so.5:zip_source_layered_create
 libzip.so.5:zip_source_make_command_bitmap
 libzip.so.5:zip_source_open
+libzip.so.5:zip_source_pass_to_lower_layer
 libzip.so.5:zip_source_read
 libzip.so.5:zip_source_rollback_write
 libzip.so.5:zip_source_seek
@@ -107,6 +112,8 @@ libzip.so.5:zip_source_window_create
 libzip.so.5:zip_source_write
 libzip.so.5:zip_source_zip
 libzip.so.5:zip_source_zip_create
+libzip.so.5:zip_source_zip_file
+libzip.so.5:zip_source_zip_file_create
 libzip.so.5:zip_stat
 libzip.so.5:zip_stat_index
 libzip.so.5:zip_stat_init
